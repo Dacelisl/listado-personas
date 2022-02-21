@@ -1,0 +1,17 @@
+<div class="container">
+    <h1 align="center">{{title}} </h1>
+    <hr>
+    <div class="form-row">
+        <label for="nombre">Nombre Persona</label>
+        <input id="nombre" type="text" class="form-control" placeholder="Nombre" [(ngModel)]="nombre">
+        <br>
+        <label for="apellido">Apellido Persona</label>
+        <input id="apellido" type="text" class="form-control" placeholder="Apellido" [(ngModel)]="apellido">
+    </div>
+    <br>
+    <div class="container" align ="center">
+        <button class="btn btn-primary" (click)="agregarPersona()">Agregar Persona</button>
+    </div>
+    <hr>
+<app-persona *ngFor="let per of personas; let ind = index" [persona]="per" [indice]="ind"></app-persona>
+</div>
