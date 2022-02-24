@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { persona } from '../persona.model';
 
 @Component({
@@ -8,13 +8,12 @@ import { persona } from '../persona.model';
 })
 export class FormularioComponent  {
   @Output() personaCreada = new  EventEmitter<persona>();
-  nombre : string = '';
-  apellido : string = '';
+  
+  @ViewChild('apellidoInput') apellido : ElementRef;  //referencias locales usando viewchild
 
-  agregarPersona(){
-    let persona1 = new persona(this.nombre, this.apellido);
+  agregarPersona(nombre: HTMLInputElement){       //referencia local 
+    let persona1 = new persona(nombre.value, this.apellido.nativeElement.value);
     this.personaCreada.emit(persona1);
-    //this.personas.push(persona1);
   }
   
 
