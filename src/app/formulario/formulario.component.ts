@@ -8,11 +8,12 @@ import { persona } from '../persona.model';
 })
 export class FormularioComponent  {
   @Output() personaCreada = new  EventEmitter<persona>();
-  
-  @ViewChild('apellidoInput') apellido : ElementRef;  //referencias locales usando viewchild
 
-  agregarPersona(nombre: HTMLInputElement){       //referencia local 
-    let persona1 = new persona(nombre.value, this.apellido.nativeElement.value);
+  nombre :string;
+  apellido : string;
+
+  agregarPersona(){
+    let persona1 = new persona(this.nombre,this.apellido);
     this.personaCreada.emit(persona1);
   }
   
