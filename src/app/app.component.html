@@ -1,7 +1,5 @@
 <div class="container">
-    <h1 align="center">{{title}} </h1>
-    <hr>
-    <app-formulario></app-formulario>
-    <hr>
-<app-persona *ngFor="let per of personas; let ind = index" [persona]="per" [indice]="ind"></app-persona>
+  <h1 align="center">{{ title }}</h1>
+  <hr />
+  <router-outlet></router-outlet>
 </div>

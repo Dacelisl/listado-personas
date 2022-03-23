@@ -1,0 +1,52 @@
+<div>
+  <form class="row g-3" id="articulo" #f="ngForm">
+    <div class="form-row">
+      <label for="nombre">Nombre Persona</label>
+      <input
+        id="nombre"
+        type="text"
+        class="form-control"
+        name="nombre"
+        placeholder="Nombre"
+        [(ngModel)]="nombre"
+        required
+      />
+      <br />
+      <label for="apellido">Apellido Persona</label>
+      <input
+        id="apellido"
+        type="text"
+        class="form-control"
+        name="apellido"
+        placeholder="Apellido"
+        [(ngModel)]="apellido"
+        required
+      />
+    </div>
+    <br />
+    <div class="container" align="center">
+      <button
+        class="btn btn-primary"
+        id="btn-persona"
+        (click)="agregarPersona()"
+        [disabled]="!f.form.valid"
+      >
+        Agregar Persona
+      </button>
+      <span *ngIf="index != null">
+  
+        <button
+        class="btn btn-primary"
+        id="btn-eliminar"
+        (click)="eliminarPersona()"
+        [disabled]="!f.form.valid"
+        >
+        Eliminar
+      </button>
+      
+      <span class="arrow left" (click)="home()"></span>
+    </span >
+    </div>
+    
+  </form>
+</div>

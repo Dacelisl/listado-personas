@@ -1,0 +1,14 @@
+<div style="text-align: center;">
+  <button style="cursor: pointer;" (click)="agregar()">+</button>
+</div>
+
+<div class="container">
+    <router-outlet></router-outlet>
+    <hr />
+    <app-persona
+      *ngFor="let per of personas; let ind = index"
+      [persona]="per"
+      [indice]="ind"
+    ></app-persona>
+  </div>
+  

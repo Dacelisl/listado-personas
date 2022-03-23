@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <li>
+        <a
+          [routerLink]="['/personas/', indice]"
+          [queryParams]="{ modoEdicion: '1' }"
+        >
+          {{ persona.nombre }} {{ persona.apellido }}
+        </a>
+      </li>
+    </div>
+  </div>
+</div>
