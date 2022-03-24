@@ -6,10 +6,11 @@ import { AppRoutingModule } from './personas/app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonaComponent } from './personas/persona/persona.component';
 import { FormularioComponent } from './personas/formulario/formulario.component';
-import { LoggingService } from './LoggingService.service';
 import { PersonaService } from './PersonaService.service';
 import { PersonasComponent } from './personas/personas.component';
 import { ErrorComponent } from './error/error.component';
+import { DataServices } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { ErrorComponent } from './error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [LoggingService,PersonaService],
+  providers: [PersonaService,DataServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

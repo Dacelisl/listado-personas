@@ -18,10 +18,10 @@ body {
 
 .arrow {
 	position: absolute;
-	top: 60%;
-	left: 12%;
-	width: 3vmin;
-	height: 3vmin;
+	top: 45%;
+	left: 5%;
+	width: 7vmin;
+	height: 7vmin;
 	cursor: pointer;
 	background: transparent;
 	border-top: 1vmin solid black;
