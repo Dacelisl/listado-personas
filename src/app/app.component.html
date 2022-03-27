@@ -1,5 +1,11 @@
 <div class="container">
   <h1 align="center">{{ title }}</h1>
   <hr />
+  <div class="btn btn-info " *ngIf="!isLogin()">
+    <a routerLink="/login">Login</a>
+  </div>
+  <div class="box" *ngIf="isLogin()">
+    <a routerLink="/" style="cursor:pointer" (click)="logOut()" >Salir</a>
+  </div>
   <router-outlet></router-outlet>
 </div>
